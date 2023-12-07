@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "csapp.h": "c",
+        "signal.h": "c",
+        "stdio.h": "c"
+    },
+    "cmake.configureOnOpen": true,
+    "C_Cpp.errorSquiggles": "disabled",
+    "python.pythonPath": "/usr/bin/python2"
+}

